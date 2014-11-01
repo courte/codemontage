@@ -33,20 +33,3 @@ module OrganizationsControllerHelper
     end
   end
 end
-
-# { "utf8"=>"✓",
-#   "authenticity_token"=>"I8hB/TbqMF2kMs9diOBUA7m7tsFnMXJxFr7VRm0KK8U=",
-#   "organization"=>
-#     { "projects_attributes"=>
-#       {  "0"=>
-#         {  "name"=>"Ruby", "github_repo"=>"http://www.github.com/ruby/ruby", "url"=>"", "description"=>"It's ruby."  }
-#       },
-#       "name"=>"Ruby",
-#       "github_org"=>"ruby",
-#       "url"=>"",
-#       "contact_name"=>"",
-#       "contact_role"=>"",
-#       "contact_email"=>""
-#     },
-#   "commit"=>"Submit a Project"
-# }
