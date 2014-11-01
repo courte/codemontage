@@ -8,6 +8,14 @@ class OrganizationsController < ApplicationController
 	end
 
 	def create
+    github_repo = params[:organization][:projects_attributes]["0"][:github_repo]
+
+    if github_url?(github_repo)
+      github_details = get_github_details(github_repo)
+      params[:organization][:github_org] = github_details[:github_org]
+      params[:organization][:projects_attributes]["0"][:github_repo] = github_details[:github_repo]
+    end
+
 		@organization = Organization.new(params[:organization])
 		@organization.is_public_submission = true
 
