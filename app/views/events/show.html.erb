@@ -17,13 +17,9 @@
 
     <% if @featured_projects %>
       <div id="event_featured_projects" class="row">
-        <div class="">
-          <ul>
-            <% @featured_projects.each do |featured_project| %>
-              <li><%= link_to(featured_project.name, project_path(featured_project)) %></li>
-            <% end %>
-          </ul>
-        </div>
+        <% @featured_projects.each do |featured_project| %>
+          <%= render partial: 'projects/project_box', locals: { project: featured_project } %>
+        <% end %>
       </div>
     <% end %>
 
