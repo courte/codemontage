@@ -1,5 +1,4 @@
-<div class="project_box large-4 columns">
-
+<li class="project-box">
   <h5><%= link_to project.name, project_path(project) %>
     <span class="favorite">
       <% if user_signed_in? %>
@@ -33,4 +32,4 @@
       <%= project_tags_link_list project, 'causes' %>
     </div>
   </div>
-</div>
+</li>
