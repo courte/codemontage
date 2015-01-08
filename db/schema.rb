@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150108061041) do
+ActiveRecord::Schema.define(:version => 20150108142201) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20150108061041) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "check_ins", ["event_id", "user_id"], :name => "index_check_ins_on_event_id_and_user_id", :unique => true
   add_index "check_ins", ["event_id"], :name => "index_check_ins_on_event_id"
   add_index "check_ins", ["user_id"], :name => "index_check_ins_on_user_id"
 
