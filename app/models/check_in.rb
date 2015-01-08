@@ -1,4 +1,4 @@
-class EventRegistration < ActiveRecord::Base
+class CheckIn < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
 
