@@ -17,7 +17,7 @@ describe EventRegistration do
       it "returns args" do
         er = create(:er_for_october)
 
-        VCR.use_cassette("courte_user") do
+        VCR.use_cassette("courte_oct_stats") do
           expect(er.github_stat_args).to eq(user: "courte",
                                             day_begin: er.event.start_date,
                                             day_end: er.event.end_date)

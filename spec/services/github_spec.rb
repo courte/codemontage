@@ -41,31 +41,31 @@ describe Github do
 
   context "when given a user" do
     it "finds pull requests by user" do
-      VCR.use_cassette("courte_jan_prs") do
-        prs = Github.pull_requests_by_user("courte", Time.parse("2015-01-08"),
-                                           Time.parse("2015-01-09"))
-        expect(prs.count).to eq(7)
+      VCR.use_cassette("courte_oct_stats") do
+        prs = Github.pull_requests_by_user("courte", Time.parse("2014-10-01"),
+                                           Time.parse("2014-10-31"))
+        expect(prs.count).to eq(1)
       end
     end
 
     it "finds commits by user" do
-      VCR.use_cassette("courte_jan_commits") do
-        commits = Github.commits_by_user("courte", Time.parse("2015-01-07"),
-                                         Time.parse("2015-01-08"))
-        expect(commits.count).to eq(20)
+      VCR.use_cassette("courte_oct_stats") do
+        commits = Github.commits_by_user("courte", Time.parse("2014-10-01"),
+                                         Time.parse("2014-10-31"))
+        expect(commits.count).to eq(1)
       end
     end
 
     it "finds issues by user" do
-      VCR.use_cassette("courte_jan_issues") do
-        issues = Github.issues_by_user("courte", Time.parse("2015-01-11"),
-                                       Time.parse("2015-01-12"))
-        expect(issues.count).to eq(2)
+      VCR.use_cassette("courte_oct_stats") do
+        issues = Github.issues_by_user("courte", Time.parse("2014-10-01"),
+                                       Time.parse("2014-10-31"))
+        expect(issues.count).to eq(0)
       end
     end
 
     it "finds forks by user" do
-      VCR.use_cassette("courte_oct_forks") do
+      VCR.use_cassette("courte_oct_stats") do
         forks = Github.forks_by_user("courte", Time.parse("2014-10-01"),
                                      Time.parse("2014-10-31"))
         expect(forks.count).to eq(2)
@@ -74,7 +74,7 @@ describe Github do
   end
 
   it "returns the user login when given a uid" do
-    VCR.use_cassette("courte_user") do
+    VCR.use_cassette("courte_oct_stats") do
       login = Github.get_user_login_by_uid("2766324")
       expect(login).to eq("courte")
     end
