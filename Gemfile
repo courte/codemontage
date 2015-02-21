@@ -28,6 +28,7 @@ gem 'geocoder'
 gem 'octokit', '~> 3.5.2'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
+gem 'intercom-rails'
 
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
