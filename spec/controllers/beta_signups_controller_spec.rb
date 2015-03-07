@@ -13,9 +13,9 @@ describe BetaSignupsController do
     end
 
     it "saves a new beta_signup to the database" do
-      expect {
+      expect do
         post :create, format: :json
-      }.to change(BetaSignup, :count).by(1)
+      end.to change(BetaSignup, :count).by(1)
     end
   end
 end
