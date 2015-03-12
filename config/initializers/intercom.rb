@@ -1,3 +1,4 @@
+# Initialize configuration for Intercom User API
 IntercomRails.config do |config|
   # == Intercom app_id
   #
@@ -94,3 +95,7 @@ IntercomRails.config do |config|
   # config.inbox.style = :default
   # config.inbox.style = :custom
 end
+
+# Initialize keys for broader Intercom API
+Intercom.app_id = ENV["INTERCOM_APP_ID"]
+Intercom.app_api_key = ENV["INTERCOM_API_KEY"]
