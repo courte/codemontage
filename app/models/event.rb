@@ -147,7 +147,9 @@ class Event < ActiveRecord::Base
     winners = []
     tickets = create_raffle_tickets
 
-    num_winners.times { winners << select_raffle_winner(tickets) } if tickets.present?
+    if tickets.present?
+      num_winners.times { winners << select_raffle_winner(tickets) }
+    end
 
     print_raffle_winners(winners)
     tickets
