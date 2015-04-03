@@ -140,7 +140,7 @@ class Event < ActiveRecord::Base
     end
 
     winner_text = "This event had no contributions." if winner_text.blank?
-    puts winner_text
+    Rails.logger.info(winner_text)
   end
 
   def raffle(num_winners = 2)
