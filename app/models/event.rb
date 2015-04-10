@@ -127,7 +127,7 @@ class Event < ActiveRecord::Base
   end
 
   def select_raffle_winner(tickets = create_raffle_tickets)
-    winner = User.find_by_email(tickets.sample).joins(:profile)
+    winner = User.find_by_email(tickets.sample)
     { email: winner.email, name: winner.profile.name } if winner
   end
 
