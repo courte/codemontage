@@ -1,0 +1,17 @@
+<div class="row">
+  <h4>Our contributors keep us going.</h4>
+  <p>CodeMontage is open source software. The work we do would not be possible without the assistance of our many talented contributors. We're grateful for the code, designs, error reports, bug fixes, text adjustments, and ideas of the wonderful people below.</p>
+
+  <ul id="contributor-list">
+    <% @contributors.each do |contributor| %>
+      <li class="contributor">
+        <% if !contributor[:name].blank? %>
+          <%= contributor[:name] %>:
+        <% end %>
+        <a href="https://github.com/<%= contributor[:github]%>" target="_blank">
+          @<%= contributor[:github]%>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

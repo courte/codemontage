@@ -29,6 +29,7 @@ CodeMontage::Application.routes.draw do
   get '/code_of_conduct', controller: 'home', action: 'code_of_conduct'
   get '/coder_day', controller: 'home', action: 'coder_day'
   get '/coder_day_of_service', controller: 'home', action: 'coder_day'
+  get '/contributors', controller: 'home', action: 'contributors'
   get '/developers_for_good', controller: 'home', action: 'developers_for_good'
   get '/join', controller: 'home', action: 'join'
   get '/our_jobs', controller: 'home', action: 'our_jobs'
